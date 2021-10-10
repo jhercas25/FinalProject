@@ -133,16 +133,11 @@ public class Main {
         for (int j=0;j<names.length;j++){
             Collections.shuffle(posibleStudents);
            for(int i=0;i<=rand(students.size()-2);i++){
-
                studentsSelected.add(students.get(posibleStudents.get(i)));
-
            }
-
            courses.add(new Course(names[j],classrooms[j],studentsSelected,teachers.get(j)));
            studentsSelected.clear();
-
         }
-
         return courses;
     }
 
