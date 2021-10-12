@@ -12,12 +12,10 @@ public class FullTimeTeacher extends  Teacher{
         return this.baseSalary * this.yearsOfExperience;
     }
 
-    public float getYearsOfExperience() {
+    public float getParameter() {
         return yearsOfExperience;
     }
 
-    public void setYearsOfExperience(float yearsOfExperience) {
-        this.yearsOfExperience = yearsOfExperience;
-    }
+
 
 }

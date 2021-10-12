@@ -15,15 +15,10 @@ public abstract class Teacher {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public float getBaseSalary() {
         return baseSalary;
     }
 
-    public void setBaseSalary(float baseSalary) {
-        this.baseSalary = baseSalary;
-    }
+    public abstract float getParameter();
+
 }

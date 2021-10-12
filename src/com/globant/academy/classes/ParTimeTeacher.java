@@ -12,11 +12,8 @@ public class ParTimeTeacher extends  Teacher{
         return this.baseSalary * this.workingHoursPerWeek;
     }
 
-    public float getWorkingHoursPerWeek() {
+    public float getParameter() {
         return workingHoursPerWeek;
     }
 
-    public void setWorkingHoursPerWeek(float workingHoursPerWeek) {
-        this.workingHoursPerWeek = workingHoursPerWeek;
-    }
 }
