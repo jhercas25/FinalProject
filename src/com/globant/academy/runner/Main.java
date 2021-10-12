@@ -55,7 +55,7 @@ public class Main {
                         index++;
                     }
                     System.out.format("+-----------------+------+%n");
-                    System.out.format("YE: Years of experience; HPW : Hours per week+%n");
+                    System.out.format("YE: Years of experience; HPW : Hours per week ------------- +%n");
 
                     break;
                 case "2":
@@ -75,7 +75,7 @@ public class Main {
                     System.out.format("+-----------------+------+%n");
 
                     while(!suboption.equals("4")){
-                        System.out.println("Options 1.Add 2.Show more info  4.Back");
+                        System.out.println("Options 1.Add; 2.Show more info;  4.Back");
                         suboption=getOption(false);
                         switch (suboption){
                             case "1":
@@ -85,7 +85,7 @@ public class Main {
                                 float age=Float.parseFloat(getOption(true)) ;
                                 int couseSelected=-1;
                                 while(couseSelected<0) {
-                                    System.out.println("Select a Course");
+                                    System.out.println("Select a course ");
                                     System.out.println("__________ Courses __________ ");
                                     leftAlignFormat = "| %-3d | %-15s |%n";
                                     index =0;
@@ -106,7 +106,7 @@ public class Main {
 
                                 break;
                             case "2":
-                                System.out.println("Select a student to see its course assigned");
+                                System.out.println("Select a student to see its courses assigned");
                                 int studentSelected = Integer.parseInt(getOption(true));
 
                                 System.out.println("__________ "+myUniversity.getStudents().get(studentSelected).getName() +" __________ ");
@@ -188,8 +188,8 @@ public class Main {
                                 System.out.println("__________ Students __________");
                                 boolean moreStudents=true;
                                 int studentSeleted;
-                                while (moreStudents){
 
+                                while (moreStudents){
                                     index=0;
                                     List<Student> studentsAssigned=newCourse.getStudents();
                                     for (Student student : myUniversity.getStudents()) {
