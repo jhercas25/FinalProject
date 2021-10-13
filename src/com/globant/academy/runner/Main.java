@@ -19,7 +19,7 @@ public class Main {
 
         University myUniversity=new University("New Order",students,teachers,courses);
         System.out.println("/======================================================/");
-        System.out.println("Wellcome to " +myUniversity.getName()+ " university tracker");
+        System.out.println("Welcome to " +myUniversity.getName()+ " university tracker");
         System.out.println("/======================================================/");
 
         boolean exit=false;
