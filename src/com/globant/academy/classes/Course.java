@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Course {
     private String name;
-    private  String classRoom;
-    private  Teacher teacher;
+    private String classRoom;
+    private Teacher teacher;
     private List<Student> students= new ArrayList<>();
 
     public Course(String name, String classRoom) {

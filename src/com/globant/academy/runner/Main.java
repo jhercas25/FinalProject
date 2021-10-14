@@ -4,7 +4,6 @@ import com.globant.academy.classes.*;
 
 import java.util.*;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -37,7 +36,7 @@ public class Main {
             switch (option){
                 case "1" :
                     System.out.println("__________ Professors __________ ");
-                    leftAlignFormat = "| %-3d | %-15s | %-15s | $%-15.2f | %-15s | $%-15.2f | %-15s |%n";
+                    leftAlignFormat = "| %-3d | %-15s | %-15s | $%-15s | %-15s | $%-15s | %-15s |%n";
 
                     System.out.format("+-----+-----------------+-----------------+------------------+------------------+------------------+------------------+%n");
                     System.out.format("|  #  |      Name       |      Type       |  Base Salary     |      Parameter   |      Salary      |      Course      |%n");
@@ -46,11 +45,11 @@ public class Main {
                     for (Teacher teacher: myUniversity.getTeachers()) {
 
                         System.out.format(leftAlignFormat,index,
-                                teacher.getName() ,
-                                teacher.getClass().getName().indexOf("Full")>0?"FulL-time":"Par-time",
-                                teacher.getBaseSalary(),
-                                (teacher.getClass().getName().indexOf("Full")>0?"YE: ":"HPW: ") + teacher.getParameter(),
-                                teacher.calculateSalary(),
+                                teacher.info().get("Name"),
+                                teacher.info().get("Type"),
+                                teacher.info().get("BaseSalary"),
+                                teacher.info().get("Parameters"),
+                                teacher.info().get("Salary"),
                                 myUniversity.getCoursesByTeacher(teacher).get(0).getName() );
                         index++;
                     }

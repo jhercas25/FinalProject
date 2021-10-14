@@ -16,7 +16,6 @@ public class University {
         this.students.addAll(students);
         this.teachers.addAll(teachers);
         this.courses.addAll(courses);
-
     }
 
     public String getName() {

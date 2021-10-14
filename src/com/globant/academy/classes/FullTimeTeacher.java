@@ -1,5 +1,9 @@
 package com.globant.academy.classes;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class FullTimeTeacher extends  Teacher{
     private  float yearsOfExperience;
 
@@ -12,10 +16,16 @@ public class FullTimeTeacher extends  Teacher{
         return this.baseSalary * this.yearsOfExperience;
     }
 
-    public float getParameter() {
-        return yearsOfExperience;
-    }
 
+    public Map<String,String>  info(){
+        Map<String,String> data= new HashMap<>(){};
+        data.put("Name",this.getName());
+        data.put("Type","Full-Time");
+        data.put("BaseSalary",this.getBaseSalary()+"");
+        data.put("Parameters","YE :"+this.yearsOfExperience);
+        data.put("Salary",this.calculateSalary()+"");
+        return  data;
+    }
 
 
 }

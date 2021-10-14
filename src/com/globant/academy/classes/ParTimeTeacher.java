@@ -1,5 +1,8 @@
 package com.globant.academy.classes;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ParTimeTeacher extends  Teacher{
     private float workingHoursPerWeek;
 
@@ -12,8 +15,13 @@ public class ParTimeTeacher extends  Teacher{
         return this.baseSalary * this.workingHoursPerWeek;
     }
 
-    public float getParameter() {
-        return workingHoursPerWeek;
+    public Map<String,String>  info(){
+        Map<String,String> data= new HashMap<>(){};
+        data.put("Name",this.getName());
+        data.put("Type","Par-Time");
+        data.put("BaseSalary",this.getBaseSalary()+"");
+        data.put("Parameters","HPW :"+this.workingHoursPerWeek);
+        data.put("Salary",this.calculateSalary()+"");
+        return  data;
     }
-
 }

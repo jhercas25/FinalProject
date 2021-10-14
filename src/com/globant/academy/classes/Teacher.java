@@ -1,5 +1,7 @@
 package com.globant.academy.classes;
 
+import java.util.Map;
+
 public abstract class Teacher {
     private String name;
     protected float baseSalary;
@@ -19,6 +21,8 @@ public abstract class Teacher {
         return baseSalary;
     }
 
-    public abstract float getParameter();
+    public abstract Map<String,String> info();
+
+
 
 }
