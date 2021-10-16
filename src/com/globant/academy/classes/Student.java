@@ -3,12 +3,12 @@ package com.globant.academy.classes;
 import java.util.UUID;
 
 public class Student {
-    private UUID uuid;
+    private String uuid;
     private String name;
     private float age;
 
     public Student( String name, float age) {
-        this.uuid = UUID.randomUUID();
+        this.uuid = UUID.randomUUID().toString().split("-")[0];
         this.name = name;
         this.age = age;
     }
