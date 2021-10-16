@@ -45,11 +45,11 @@ public class Main {
                     for (Teacher teacher: myUniversity.getTeachers()) {
 
                         System.out.format(leftAlignFormat,index,
-                                teacher.info().get("Name"),
-                                teacher.info().get("Type"),
-                                teacher.info().get("BaseSalary"),
-                                teacher.info().get("Parameters"),
-                                teacher.info().get("Salary"),
+                                teacher.getInfo().get("Name"),
+                                teacher.getInfo().get("Type"),
+                                teacher.getInfo().get("BaseSalary"),
+                                teacher.getInfo().get("Parameters"),
+                                teacher.getInfo().get("Salary"),
                                 myUniversity.getCoursesByTeacher(teacher).get(0).getName() );
                         index++;
                     }

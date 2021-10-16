@@ -15,7 +15,7 @@ public class ParTimeTeacher extends  Teacher{
         return this.baseSalary * this.workingHoursPerWeek;
     }
 
-    public Map<String,String>  info(){
+    public Map<String,String> getInfo(){
         Map<String,String> data= new HashMap<>(){};
         data.put("Name",this.getName());
         data.put("Type","Par-Time");

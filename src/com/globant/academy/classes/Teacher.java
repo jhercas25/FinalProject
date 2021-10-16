@@ -21,7 +21,7 @@ public abstract class Teacher {
         return baseSalary;
     }
 
-    public abstract Map<String,String> info();
+    public abstract Map<String,String> getInfo();
 
 
 
