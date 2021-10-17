@@ -105,6 +105,22 @@ public class Main {
                                 myUniversity.getCourses().get(couseSelected).addStudents(newStudent);
                                 System.out.println("Student created");
 
+                                System.out.println("__________" +newStudent.getName() +" __________ ");
+                                leftAlignFormat = "| %-3d | %-15s | %-15s | %-15s |%n";
+
+                                System.out.format("+-----+-----------------+-----------------+-----------------+%n");
+                                System.out.format("|   # |      Name       |      Age        |      Course        |%n");
+                                System.out.format("+-----+-----------------+-----------------+-----------------+%n");
+                                index=0;
+                                System.out.format(leftAlignFormat,index,
+                                        newStudent.getName() ,
+                                        newStudent.getAge(),
+                                        myUniversity.getCoursesByStudent(newStudent).get(0).getName());
+
+                                System.out.println("__________ Enter Y key to go back __________ ");
+                                getOption(false);
+                                suboption="4";
+
                                 break;
                             case "2":
                                 System.out.println("Select a student to see its courses assigned");
@@ -213,6 +229,29 @@ public class Main {
                                     }
 
                                 }
+
+                                System.out.println("__________"+newCourse.getName()+" __________ ");
+                                leftAlignFormat = "| %-5d | %-15s | %-15s | %-15s | %-15s |%n";
+
+                                System.out.format("+-------+-----------------+-----------------+-----------------+------------------+%n");
+                                System.out.format("|   #   |      Name       |     Classroom   |     Teacher     |     Students     |%n");
+                                System.out.format("+-------+-----------------+-----------------+-----------------+------------------+%n");
+
+                                String listOfStudents="";
+
+                                for (Student student:newCourse.getStudents()) {
+                                    listOfStudents+="-"+student.getName();
+                                }
+                                index=0;
+                                System.out.format(leftAlignFormat,index,
+                                        newCourse.getName() ,
+                                        newCourse.getClassRoom(),
+                                        newCourse.getTeacher().getName(),
+                                        listOfStudents);
+
+                                System.out.println("__________ Enter Y key to go back __________ ");
+                                getOption(false);
+                                suboption="4";
 
                                 break;
                             case "2":
