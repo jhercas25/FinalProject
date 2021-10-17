@@ -16,10 +16,12 @@ public class Main {
         teachers = loadTeachers();
         courses = loadCourses(students,teachers);
 
-        University myUniversity=new University("New Order",students,teachers,courses);
+        University myUniversity=University.getUniversity("New Order",students,teachers,courses);
         System.out.println("/======================================================/");
         System.out.println("Welcome to " +myUniversity.getName()+ " university tracker");
         System.out.println("/======================================================/");
+
+        myUniversity=University.getUniversity("New OtraOrder",students,teachers,courses);
 
         boolean exit=false;
 

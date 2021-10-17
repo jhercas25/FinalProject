@@ -6,16 +6,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class University {
+    private  static University myUniversity;
     private String name;
     private List<Student> students= new ArrayList<>();
     private List<Teacher> teachers = new ArrayList<>();
     private List<Course> courses = new ArrayList<>();
 
-    public University(String name,List<Student> students, List<Teacher> teachers, List<Course> courses) {
+    private University(String name,List<Student> students, List<Teacher> teachers, List<Course> courses) {
         this.name=name;
         this.students.addAll(students);
         this.teachers.addAll(teachers);
         this.courses.addAll(courses);
+    }
+    public  static University getUniversity(String name,List<Student> students, List<Teacher> teachers, List<Course> courses){
+        if (myUniversity==null){
+            myUniversity= new University(name,students,teachers,courses);
+        }
+        return myUniversity;
     }
 
     public String getName() {
