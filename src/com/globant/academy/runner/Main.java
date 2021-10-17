@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Welcome to " +myUniversity.getName()+ " university tracker");
         System.out.println("/======================================================/");
 
-        myUniversity=University.getUniversity("New OtraOrder",students,teachers,courses);
+
 
         boolean exit=false;
 
@@ -84,8 +84,8 @@ public class Main {
                                 String name=getOption(false);
                                 System.out.println("now the age") ;
                                 float age=Float.parseFloat(getOption(true)) ;
-                                int couseSelected=-1;
-                                while(couseSelected<0) {
+                                int courseSelected=-1;
+                                while(courseSelected<0) {
                                     System.out.println("Select a course ");
                                     System.out.println("__________ Courses __________ ");
                                     leftAlignFormat = "| %-3d | %-15s |%n";
@@ -94,15 +94,15 @@ public class Main {
                                         System.out.format(leftAlignFormat,index, course.getName());
                                         index++;
                                     }
-                                    couseSelected=Integer.parseInt(getOption(true));
-                                    if(couseSelected>myUniversity.getCourses().size()-1){
+                                    courseSelected=Integer.parseInt(getOption(true));
+                                    if(courseSelected>myUniversity.getCourses().size()-1){
                                         System.out.println("Select a valid student");
-                                        couseSelected=-1;
+                                        courseSelected=-1;
                                     }
                                 }
                                 Student newStudent =new Student(name,age);
                                 myUniversity.addStudent(newStudent);
-                                myUniversity.getCourses().get(couseSelected).addStudents(newStudent);
+                                myUniversity.getCourses().get(courseSelected).addStudents(newStudent);
                                 System.out.println("Student created");
 
                                 System.out.println("__________" +newStudent.getName() +" __________ ");
@@ -204,7 +204,7 @@ public class Main {
                                 System.out.println("Select a students to add");
                                 System.out.println("__________ Students __________");
                                 boolean moreStudents=true;
-                                int studentSeleted;
+                                int studentSelected;
 
                                 while (moreStudents){
                                     index=0;
@@ -219,11 +219,11 @@ public class Main {
                                         index++;
                                     }
 
-                                    studentSeleted=Integer.parseInt(getOption(true));
-                                    if (studentSeleted>myUniversity.getStudents().size() || studentsAssigned.contains(myUniversity.getStudents().get(studentSeleted))){
+                                    studentSelected=Integer.parseInt(getOption(true));
+                                    if (studentSelected>myUniversity.getStudents().size() || studentsAssigned.contains(myUniversity.getStudents().get(studentSelected))){
                                         System.out.println(" \u001B Select a valid student \u001B");
                                     }else{
-                                        newCourse.addStudents(myUniversity.getStudents().get(studentSeleted));
+                                        newCourse.addStudents(myUniversity.getStudents().get(studentSelected));
                                         System.out.println(" \u001B Do you want to add more students enter 1 or any key to quit \u001B");
                                         moreStudents=getOption(false).equals("1");
                                     }
@@ -330,13 +330,13 @@ public class Main {
         List<Student>studentsSelected = new ArrayList<>();
         String[] names={"Biology","Large Weapons","Ninjan way","Surf"};
         String[] classrooms={"A22","B51","F29","U42"};
-        List<Integer> posibleStudents= new ArrayList<>();
-        for(int i=0;i<6;i++) posibleStudents.add(i);
+        List<Integer> possibleStudents= new ArrayList<>();
+        for(int i=0;i<6;i++) possibleStudents.add(i);
 
         for (int j=0;j<names.length;j++){
-            Collections.shuffle(posibleStudents);
+            Collections.shuffle(possibleStudents);
            for(int i=0;i<=rand(students.size()-2);i++){
-               studentsSelected.add(students.get(posibleStudents.get(i)));
+               studentsSelected.add(students.get(possibleStudents.get(i)));
            }
            courses.add(new Course(names[j],classrooms[j],studentsSelected,teachers.get(j)));
            studentsSelected.clear();
